@@ -1,0 +1,43 @@
+.input{
+    height: 50px;
+    width: 700px;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    background: none;
+    border: none;
+    margin-left: 12px;
+    flex: 1;
+}
+
+input:focus{
+    border: none;
+    margin-right: 8px;
+    background-color: #eee;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    height: 30px;
+    width: 50px;
+    padding-left: 10px;
+    outline: 1px dotted #333;
+}
+
+button{
+    border: none;
+    height: 30px;
+    background: #333;
+    color: white;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s background;
+}
+button:hover{
+    background: #555;
+}
