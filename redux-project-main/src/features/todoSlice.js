@@ -2,11 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     todoList: [
-        {
-            description: 'Create a new Task',
-            isDone: false,
-            id: Date.now()
-        },
+        
     ]
 }
 
@@ -21,18 +17,21 @@ const todoSlice = createSlice({
         setCheck: (state,action)=>{
             state.todoList.map(item=>{
                 if(action.payload===item.id){
-                    if(item.isDone === true){
-                        item.isDone = false
-                    }else if(item.isDone === false){
-                        item.isDone = true
+                    if(item.done === true){
+                        item.done = !item.done
+                    }else if(item.done === false){
+                        item.done = !item.done
                     }
                 }
             })
+        },
+        setDelete:(state, action)=> {
+             return {todoList : state.todoList.filter((item)=> item.id !== action.payload)}
         }
     }
 });
 
-export const {saveTodo, setCheck} = todoSlice.actions
+export const {saveTodo, setCheck, setDelete} = todoSlice.actions
 
 export const selectTodoList = state => state.todos.todoList
 
